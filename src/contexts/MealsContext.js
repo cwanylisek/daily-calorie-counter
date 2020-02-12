@@ -16,8 +16,14 @@ const MealsContextProvider = props => {
         setTodayMeals([...todayMeals, newMeal])
     }
 
+    const removeMeal = (index) => {
+        let todayMealsNew = todayMeals
+        todayMealsNew.splice(index, 1)
+        setTodayMeals([...todayMealsNew])
+    }
+
     return (
-        <MealsContext.Provider value={{ meals, setMeals, todayMeals, addTodayMeal }}>
+        <MealsContext.Provider value={{ meals, setMeals, todayMeals, addTodayMeal, removeMeal }}>
             {props.children}
         </MealsContext.Provider>
     )
