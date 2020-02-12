@@ -5,7 +5,7 @@ import './Inputbar.scss';
 
 const Inputbar = () => {
 
-    const { meals } = useContext(MealsContext)
+    const { meals, addTodayMeal } = useContext(MealsContext)
 
     const styles = {
         control: (provided, state) => ({
@@ -26,10 +26,19 @@ const Inputbar = () => {
         })
     }
 
+    let selectedOption
+
+    const selectedMeal = selectedOption => {
+        console.log(selectedOption);
+        addTodayMeal(selectedOption)
+    }
+
     return (
         <div className="inputbar__container">
             <Select
                 options={meals}
+                value={selectedOption}
+                onChange={selectedMeal}
                 placeholder={'Type your meal'}
                 isSearchable={true}
                 styles={styles}
