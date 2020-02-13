@@ -4,20 +4,31 @@ import './TodayMeal.scss';
 
 const TodayMeal = () => {
 
-    const { todayMeals, removeMeal } = useContext(MealsContext)
+    const { todayMeals, removeMeal, changePortion } = useContext(MealsContext)
 
     const removeMealHandler = (id) => {
         removeMeal(id)
     }
 
-    const displayMeals = todayMeals.map((item, index) => {
+    const changePortionHandler = (e) => {
+
+        const portion = e.target.value
+        const kcal = e.target.getAttribute('kcal')
+        const id = e.target.id
+
+        changePortion(portion, kcal, id)
+    }
+
+
+    const displayMeals = todayMeals.map((item, index) => { //todo: change key, dont use index
         return (
-            <div className="todaymeal__meal" key={item.id}>
+            <div className="todaymeal__meal" key={index}>
                 <h1 className="todaymeal__title">{item.label}</h1>
-                <div className="todaymeal__specifications">
-                    <span>kcal {item.kcal}</span>
+                <form className="todaymeal__specifications">
+                    <span><input type="number" min="1" max="9999" defaultValue={item.portion} name="portion" kcal={item.kcal} id={item.id} onChange={changePortionHandler} /> g</span>
+                    <span>{item.kcal} kcal</span>
                     <span onClick={removeMealHandler}>remove</span>
-                </div>
+                </form>
             </div>
         )
     })
