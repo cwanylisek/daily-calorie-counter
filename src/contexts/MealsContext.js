@@ -28,7 +28,7 @@ const MealsContextProvider = props => {
 
         console.log(sum)
 
-        setTodayMeals(todayMeals.map(item => item.id === id ? { ...item, kcal: sum } : item))
+        setTodayMeals(todayMeals.map(item => item.id === id ? { ...item, newKcal: sum } : item))
     }
 
     return (
