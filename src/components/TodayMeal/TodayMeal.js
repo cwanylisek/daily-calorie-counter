@@ -30,7 +30,7 @@ const TodayMeal = () => {
                 <form className="today-meal__specifications">
                     <span><input className="today-meal__input" type="number" min="1" max="9999" defaultValue={item.portion} name="portion" kcal={item.kcal} id={item.id} onChange={changePortionHandler} /> g</span>
                     <span>{energyValue} kcal</span>
-                    <span onClick={removeMealHandler}>remove</span>
+                    <div className="today-meal__delete" onClick={removeMealHandler}></div>
                 </form>
             </div>
         )
