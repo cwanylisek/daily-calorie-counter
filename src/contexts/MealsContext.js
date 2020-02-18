@@ -32,6 +32,8 @@ const MealsContextProvider = props => {
         if (todayMeals.length > 0) {
             const sum = todayMeals.map(item => item.newKcal ? item.newKcal : item.kcal).reduce((a, b) => { return a + b })
             setCaloriesCount(sum)
+        } else {
+            setCaloriesCount(0)
         }
        
     }, [todayMeals]);

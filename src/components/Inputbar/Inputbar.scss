@@ -1,7 +1,15 @@
 .inputbar {
     &__container {
-        top: 15%;
-        position: absolute;
-        width: 40%;
+        width: 70%;
+        margin-top: 15vh
+    }
+}
+
+@media (min-width: 768px) {
+    .inputbar {
+        &__container {
+            margin-top: 20vh;
+            width: 40%;
+        }
     }
 }

@@ -16,7 +16,9 @@ const Inputbar = () => {
             borderRadius: '20px',
             width: '100%',
             height: '32px',
-            padding: '0 15px'
+            padding: '0 15px',
+            boxShadow: '0 0 18px #FE9166',
+            cursor: 'pointer'
         }),
         menu: (provided) => ({
             ...provided,

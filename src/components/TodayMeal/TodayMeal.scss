@@ -1,7 +1,17 @@
 .today-meal {
     &__container {
-        position: absolute;
-        top: 30%;
+        margin-top: 2vh;
+    }
+    &__title {
+        font-size: 1.5em;
+    }
+    &__input {
+        background-color: #381841;
+        outline: none;
+        color: #fff;
+        height: 20px;
+        border: none;
+        border-bottom: 2px solid #199F84;
     }
     &__specifications {
         span {

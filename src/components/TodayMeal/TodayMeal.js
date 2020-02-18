@@ -28,7 +28,7 @@ const TodayMeal = () => {
             <div className="today-meal__meal" key={index}>
                 <h1 className="today-meal__title">{item.label}</h1>
                 <form className="today-meal__specifications">
-                    <span><input type="number" min="1" max="9999" defaultValue={item.portion} name="portion" kcal={item.kcal} id={item.id} onChange={changePortionHandler} /> g</span>
+                    <span><input className="today-meal__input" type="number" min="1" max="9999" defaultValue={item.portion} name="portion" kcal={item.kcal} id={item.id} onChange={changePortionHandler} /> g</span>
                     <span>{energyValue} kcal</span>
                     <span onClick={removeMealHandler}>remove</span>
                 </form>
