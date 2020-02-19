@@ -7,7 +7,7 @@ const DailyBalance = () => {
 
     return (
         <div className="daily-balance__container">
-            today you eated: {caloriesCount} kalories
+            <p>Today you eated: <strong className="daily-balance__score">{caloriesCount}</strong> kalories</p>
         </div>
     )
 }

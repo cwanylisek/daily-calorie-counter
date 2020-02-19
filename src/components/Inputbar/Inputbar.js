@@ -25,6 +25,10 @@ const Inputbar = () => {
             width: '100%',
             zIndex: '110',
             background: '#000'
+        }),
+        singleValue: (provided) => ({
+            ...provided,
+            color: '#fff'
         })
     }
 

@@ -3,5 +3,10 @@
         position: absolute;
         top: 80%;
         height: 150px;
+        color: rgba($color: #fff, $alpha: .5);
+    }
+    &__score {
+        color: #199F84;
+        font-size: 1.5em;
     }
 }

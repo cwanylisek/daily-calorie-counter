@@ -19,12 +19,17 @@
         height: 20px;
         border: none;
         border-bottom: 2px solid #199F84;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     }
     &__specifications {
         position: relative;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         span {
             margin: 0 5px;
         }
@@ -34,11 +39,13 @@
         height: 32px;
         opacity: 0.3;
         cursor: pointer;
+        transition: all .3s ease;
         &:hover {
             opacity: 1;
         }
         &:before, &:after {
             position: absolute;
+            right: 15px;
             content: ' ';
             height: 33px;
             width: 2px;
