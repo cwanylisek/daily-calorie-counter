@@ -22,7 +22,7 @@ const MealsContextProvider = props => {
 
     const changePortion = async (portion, kcal, id) => {
 
-        const sum = (kcal * portion) / 100
+        const sum = Math.floor((kcal * portion) / 100)
         setTodayMeals(todayMeals.map(item => item.id === id ? { ...item, newKcal: sum } : item))
 
     };
@@ -31,7 +31,7 @@ const MealsContextProvider = props => {
 
         if (todayMeals.length > 0) {
             const sum = todayMeals.map(item => item.newKcal ? item.newKcal : item.kcal).reduce((a, b) => { return a + b })
-            setCaloriesCount(sum)
+            setCaloriesCount(Math.floor(sum))
         } else {
             setCaloriesCount(0)
         }
