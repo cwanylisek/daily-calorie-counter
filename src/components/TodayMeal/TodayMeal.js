@@ -20,21 +20,27 @@ const TodayMeal = () => {
     };
 
 
-    const displayMeals = todayMeals.map((item, index) => { //todo: change key, dont use index
+    const displayMeals = todayMeals.length > 0
 
-        const energyValue = item.newKcal ? item.newKcal : item.kcal
+        ? todayMeals.map((item, index) => { //todo: change key, dont use index
 
-        return (
-            <div className="today-meal__meal" key={index}>
-                <h1 className="today-meal__title">{item.label}</h1>
-                <form className="today-meal__specifications">
-                    <span><input className="today-meal__input" type="number" min="1" max="9999" defaultValue={item.portion} name="portion" kcal={item.kcal} id={item.id} onChange={changePortionHandler} /> g</span>
-                    <span className="today-meal__value"><strong>{energyValue}</strong> kcal</span>
-                    <div className="today-meal__delete" onClick={removeMealHandler}></div>
-                </form>
-            </div>
-        )
-    })
+            const energyValue = item.newKcal ? item.newKcal : item.kcal
+
+            return (
+                <div className="today-meal__meal" key={index}>
+                    <h1 className="today-meal__title">{item.label}</h1>
+                    <form className="today-meal__specifications">
+                        <span><input className="today-meal__input" type="number" min="1" max="9999" defaultValue={item.portion} name="portion" kcal={item.kcal} id={item.id} onChange={changePortionHandler} /> g</span>
+                        <span className="today-meal__value"><strong>{energyValue}</strong> kcal</span>
+                        <div className="today-meal__delete" onClick={removeMealHandler}></div>
+                    </form>
+                </div>
+            )
+        })
+
+        : <p className="today-meal__placeholder">Choose some eated meals!</p>;
+
+
 
     return (
         <div className="today-meal__container">

@@ -1,13 +1,15 @@
 .today-meal {
     &__container {
         margin-top: 25px;
-        padding: 0 10px;
+        padding: 5px 15px 20px 15px;
         width: 60%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         max-height: 50%;
         overflow: auto;
+        background-color: rgb(51, 14, 61);
+        border-radius: 10px;
         &::-webkit-scrollbar {
             width: 0.3em;
             height: 0.3em;
@@ -58,6 +60,12 @@
             font-size: 1.5em;
             margin: 0 5px;
         }
+    }
+    &__placeholder {
+        color: rgba($color: #fff, $alpha: .5);
+        text-align: center;
+        font-size: 1.3em;
+        padding: 13px;
     }
     &__delete {
         width: 32px;
