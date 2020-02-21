@@ -66,6 +66,9 @@
         text-align: center;
         font-size: 1.3em;
         padding: 13px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
     &__delete {
         width: 32px;

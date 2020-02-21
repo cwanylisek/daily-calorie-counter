@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { MealsContext } from '../../contexts/MealsContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPizzaSlice, faHamburger, faEgg, faBreadSlice, faHotdog, faBacon, faDrumstickBite } from '@fortawesome/free-solid-svg-icons';
 import './TodayMeal.scss';
 
 const TodayMeal = () => {
@@ -7,7 +9,7 @@ const TodayMeal = () => {
     const { todayMeals, removeMeal, changePortion } = useContext(MealsContext);
 
     const removeMealHandler = (id) => {
-        removeMeal(id)
+        removeMeal(id);
     };
 
     const changePortionHandler = (e) => {
@@ -16,9 +18,10 @@ const TodayMeal = () => {
         const kcal = e.target.getAttribute('kcal')
         const id = e.target.id
 
-        changePortion(portion, kcal, id)
+        changePortion(portion, kcal, id);
     };
 
+    const iconRandom = [faPizzaSlice, faHamburger, faEgg, faBreadSlice, faHotdog, faBacon, faDrumstickBite];
 
     const displayMeals = todayMeals.length > 0
 
@@ -38,7 +41,7 @@ const TodayMeal = () => {
             )
         })
 
-        : <p className="today-meal__placeholder">Choose some eated meals!</p>;
+        : <p className="today-meal__placeholder">Choose some eated <FontAwesomeIcon icon={iconRandom[Math.floor(Math.random() * iconRandom.length)]} size="2x" /></p>;
 
 
 
