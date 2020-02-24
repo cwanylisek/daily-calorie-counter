@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <nav className="Navbar__container">
-            <Link><FontAwesomeIcon className="Navbar__icon" icon={faChartLine} size="2x" /></Link>
+            <Link to="/chart"><FontAwesomeIcon className="Navbar__icon" icon={faChartLine} size="2x" /></Link>
         </nav>
     )
 
