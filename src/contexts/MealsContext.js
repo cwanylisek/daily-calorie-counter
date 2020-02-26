@@ -35,7 +35,35 @@ const MealsContextProvider = props => {
         } else {
             setCaloriesCount(0)
         }
-       
+
+        console.log('todayMeals cahnged!')
+        // load data from LS
+        // const loadState = (state) => {
+
+        //     try {
+        //         const serializedState = localStorage.getItem(state);
+        //         if(serializedState === null){
+        //             return undefined;
+        //         }
+        //         return JSON.parse(serializedState);
+        //     } catch (err) {
+        //         return undefined;
+        //     }
+        // };
+
+
+        //save data to LS
+
+        try {
+
+            const serializedState = JSON.stringify(todayMeals);
+            localStorage.setItem('todayMeals', serializedState);
+
+        } catch (err) {
+            return undefined;
+        }
+
+
     }, [todayMeals]);
 
     return (
