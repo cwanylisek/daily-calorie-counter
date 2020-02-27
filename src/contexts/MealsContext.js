@@ -11,8 +11,14 @@ const MealsContextProvider = props => {
 
     const [caloriesCount, setCaloriesCount] = useState([0]);
 
+    const [savedMeals, setSavedMeals] = useState([]);
+
     const addTodayMeal = (newMeal) => {
-        setTodayMeals([...todayMeals, newMeal])
+
+        let today = moment();
+        today = today.format('DD-MM-YYYY');
+
+        setTodayMeals([...todayMeals, { ...newMeal, date: today }])
     };
 
     const removeMeal = (index) => {
@@ -29,6 +35,14 @@ const MealsContextProvider = props => {
     };
 
     useEffect(() => {
+        
+        const getLsMeals = JSON.parse(localStorage.getItem('meals'));
+        console.log(getLsMeals, 'lsMeals');
+        setSavedMeals(getLsMeals);
+
+    }, [meals]);
+
+    useEffect(() => {
 
         if (todayMeals.length > 0) {
             const sum = todayMeals.map(item => item.newKcal ? item.newKcal : item.kcal).reduce((a, b) => { return a + b })
@@ -37,42 +51,24 @@ const MealsContextProvider = props => {
             setCaloriesCount(0)
         }
 
-        console.log('todayMeals cahnged!')
-
         //save data to LS
-        let today = moment();
-        today = today.format('DD-MM-YYYY');
+        // let today = moment();
+        // today = today.format('DD-MM-YYYY');
 
         try {
 
             const serializedState = JSON.stringify(todayMeals);
-            localStorage.setItem(today, serializedState);
-
+            localStorage.setItem('meals', serializedState);
+            
         }
         catch (err) {
             return console.log(err);
         }
 
-        // load data from LS
-        console.log(localStorage.getItem(today), 'powinien byc dzisiejszy obiekt')
-        // if (today == localStorage.getItem(today)) {
-        //     try {
-        //         const serializedState = localStorage.getItem(state);
-        //         if(serializedState === null){
-        //             return undefined;
-        //         }
-        //         console.log(JSON.parse(serializedState))
-        //         return JSON.parse(serializedState);
-        //     } catch (err) {
-        //         return undefined;
-        //     }
-        // }
-
-
     }, [todayMeals]);
 
     return (
-        <MealsContext.Provider value={{ meals, setMeals, todayMeals, addTodayMeal, removeMeal, changePortion, caloriesCount }}>
+        <MealsContext.Provider value={{ meals, setMeals, todayMeals, addTodayMeal, removeMeal, changePortion, caloriesCount, savedMeals }}>
             {props.children}
         </MealsContext.Provider>
     )
