@@ -37,7 +37,6 @@ const MealsContextProvider = props => {
     useEffect(() => {
         
         const getLsMeals = JSON.parse(localStorage.getItem('meals'));
-        console.log(getLsMeals, 'lsMeals');
         setSavedMeals(getLsMeals);
 
     }, [meals]);
@@ -52,20 +51,19 @@ const MealsContextProvider = props => {
         }
 
         //save data to LS
-        // let today = moment();
-        // today = today.format('DD-MM-YYYY');
 
         try {
 
-            const serializedState = JSON.stringify(todayMeals);
+            const combineMeals = [...savedMeals, ...todayMeals]
+            const serializedState = JSON.stringify(combineMeals);
             localStorage.setItem('meals', serializedState);
-            
+
         }
         catch (err) {
             return console.log(err);
         }
 
-    }, [todayMeals]);
+    }, [todayMeals, savedMeals]);
 
     return (
         <MealsContext.Provider value={{ meals, setMeals, todayMeals, addTodayMeal, removeMeal, changePortion, caloriesCount, savedMeals }}>
