@@ -1,5 +1,6 @@
 import React from 'react';
 import MealsContextProvider from './contexts/MealsContext';
+import ChartContextProvider from './contexts/ChartContext';
 import './App.scss';
 import { Route } from 'react-router';
 import Meal from './components/Meal/Meal';
@@ -13,7 +14,9 @@ function App() {
             <MealsContextProvider>
                 <Navbar />
                 <Route exact path="/" component={Meal} />
-                <Route path="/chart" component={Chart} />
+                <ChartContextProvider>
+                    <Route path="/chart" component={Chart} />
+                </ChartContextProvider>
             </MealsContextProvider>
         </div>
     );
