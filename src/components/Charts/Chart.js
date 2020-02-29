@@ -11,7 +11,7 @@ const Chart = () => {
         labels: labels,
         datasets: [
           {
-            label: 'My First dataset',
+            label: 'Kalories eated',
             fill: false,
             lineTension: 0.8,
             backgroundColor: 'rgb(25, 159, 132)',
@@ -21,7 +21,8 @@ const Chart = () => {
             borderDashOffset: 0.0,
             borderJoinStyle: 'miter',
             pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
+            pointBackgroundColor: 'rgb(25, 159, 132)',
+            maintainAspectRatio: false,
             pointBorderWidth: 1,
             pointHoverRadius: 5,
             pointHoverBackgroundColor: 'rgba(75,192,192,1)',
