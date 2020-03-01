@@ -13,7 +13,6 @@ const ChartContextProvider = props => {
 
         const loadDataFromLs = JSON.parse(localStorage.getItem('meals'));
         const neededValues = loadDataFromLs.map(({ date, kcal }) => ({ date, kcal }));
-        console.log(neededValues)
 
         const result = Object.values(neededValues.reduce((val, { kcal, date }) => {
             if (!val[date])

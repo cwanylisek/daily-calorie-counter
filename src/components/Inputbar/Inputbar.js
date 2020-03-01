@@ -35,7 +35,6 @@ const Inputbar = () => {
     let selectedOption
 
     const selectedMeal = selectedOption => {
-        console.log(selectedOption);
         addTodayMeal(selectedOption)
     };
 

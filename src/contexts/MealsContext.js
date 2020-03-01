@@ -35,7 +35,7 @@ const MealsContextProvider = props => {
     };
 
     useEffect(() => {
-        
+
         const getLsMeals = JSON.parse(localStorage.getItem('meals'));
         setSavedMeals(getLsMeals);
 

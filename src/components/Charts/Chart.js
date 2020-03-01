@@ -12,9 +12,9 @@ const Chart = () => {
         datasets: [
           {
             label: 'Kalories eated',
-            fill: false,
+            fill: true,
             lineTension: 0.8,
-            backgroundColor: 'rgb(25, 159, 132)',
+            backgroundColor: 'rgba(25, 159, 132, 0.2)',
             borderColor: 'rgb(25, 159, 132)',
             borderCapStyle: 'butt',
             borderDash: [],
