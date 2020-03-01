@@ -1,18 +1,22 @@
 import React from 'react';
 import MealsContextProvider from './contexts/MealsContext';
+import ChartContextProvider from './contexts/ChartContext';
 import './App.scss';
-import Inputbar from './components/Inputbar/Inputbar';
-import TodayMeal from './components/TodayMeal/TodayMeal';
-import DailyBalance from './components/DailyBlanace/DailyBalance';
+import { Route } from 'react-router';
+import Meal from './components/Meal/Meal';
+import Chart from './components/Charts/Chart';
+import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
     return (
         <div className="App">
             <MealsContextProvider>
-                <Inputbar />
-                <TodayMeal />
-                <DailyBalance />
+                <Navbar />
+                <Route exact path="/" component={Meal} />
+                <ChartContextProvider>
+                    <Route path="/chart" component={Chart} />
+                </ChartContextProvider>
             </MealsContextProvider>
         </div>
     );

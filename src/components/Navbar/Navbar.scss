@@ -1,0 +1,28 @@
+.Navbar {
+    &__container {
+        position: absolute;
+        top: 5vh;
+        padding: 5px 10px;
+        width: 32px;
+        text-align: center;
+    }
+    &__icon {
+        color: rgba($color: #fff, $alpha: .5);
+    }
+}
+
+@media (min-width: 768px) {
+    .Navbar {
+        &__container {
+            top: 40vh;
+            right: 5vw;
+            padding: 25px 10px;
+            border-radius: 15px;
+            transition: all .4s ease;
+            &:hover {
+                background-color: #330e3d;
+                cursor: pointer;
+            }
+        }
+    }
+}
