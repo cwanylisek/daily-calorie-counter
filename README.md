@@ -1,3 +1,7 @@
+## How to use
+
+Select the meals you eat, then go to the charts where you can see your daily calories graph! Data is stored in your Local Storage of the browser.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
