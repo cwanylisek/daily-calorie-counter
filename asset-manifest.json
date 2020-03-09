@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/daily-calorie-counter/static/css/main.6f40737c.chunk.css",
+    "main.js": "/daily-calorie-counter/static/js/main.5fbd4158.chunk.js",
+    "main.js.map": "/daily-calorie-counter/static/js/main.5fbd4158.chunk.js.map",
+    "runtime-main.js": "/daily-calorie-counter/static/js/runtime-main.e8b980bd.js",
+    "runtime-main.js.map": "/daily-calorie-counter/static/js/runtime-main.e8b980bd.js.map",
+    "static/js/2.366ec011.chunk.js": "/daily-calorie-counter/static/js/2.366ec011.chunk.js",
+    "static/js/2.366ec011.chunk.js.map": "/daily-calorie-counter/static/js/2.366ec011.chunk.js.map",
+    "index.html": "/daily-calorie-counter/index.html",
+    "precache-manifest.d6edd7d91744821a314ad4fea4d7f7ca.js": "/daily-calorie-counter/precache-manifest.d6edd7d91744821a314ad4fea4d7f7ca.js",
+    "service-worker.js": "/daily-calorie-counter/service-worker.js",
+    "static/css/main.6f40737c.chunk.css.map": "/daily-calorie-counter/static/css/main.6f40737c.chunk.css.map",
+    "static/js/2.366ec011.chunk.js.LICENSE.txt": "/daily-calorie-counter/static/js/2.366ec011.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8b980bd.js",
+    "static/js/2.366ec011.chunk.js",
+    "static/css/main.6f40737c.chunk.css",
+    "static/js/main.5fbd4158.chunk.js"
+  ]
+}
